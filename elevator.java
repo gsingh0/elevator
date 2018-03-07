@@ -1,3 +1,5 @@
+
+
 import java.util.*;
 
 						  
@@ -13,6 +15,7 @@ public class elevator  {
 		 //list of floors in which the elevator will stop and will not stop while going up
 		 ArrayList <list> comb = new ArrayList<list>();
 		 
+		
 		 //list of all the floors in the building excluding 1; used temporarily for the downMain arraylist
 		 ArrayList <Integer> down = new ArrayList <Integer>();
 		 
@@ -145,7 +148,8 @@ public class elevator  {
 			}
 		}
 	
-	//
+	//randomly shuffles list a (contains all floors) and adds first value to list b (contains floors in which 
+	//it will stop) and then removes the first value to avoid repeated numbers. 
 	public static void randomFloor(ArrayList <Integer> a, ArrayList <Integer> b, int c) {
 		for (int i = 0; i < 11 - c; i++ ) {
 			Collections.shuffle(a);
@@ -154,6 +158,7 @@ public class elevator  {
 		}
 	}
 	
+	//sorts list using selection sort
 	public static void selectionSort(ArrayList <Integer> a) {
 		 int n = a.size();
 		 
@@ -172,6 +177,7 @@ public class elevator  {
 	        }
 	}
 	
+	//sorts list using selection sort in descending order
 	public static void selectionSortDescending(ArrayList <Integer> a) {
 		 int n = a.size();
 	        for (int i = 0; i < n-1; i++)
@@ -188,6 +194,8 @@ public class elevator  {
 	        }
 	}
 	
+	//Runs through list comb in which it will stop at a floor if boolean field is true and will not stop if false. 
+	//Throws interruptedException to handle Thread.sleep() function
 	public static void elevatorUp(ArrayList <list> a) throws InterruptedException {
 		for (int i = 0; i < a.size(); i++) {
 			if (a.get(i).getBol() == true) {
@@ -206,7 +214,8 @@ public class elevator  {
 		}
 		
 		}
-	
+	//Runs through list dow in which it will stop at a floor if boolean field is true and will not stop if false. 
+	//Throws interruptedException to handle Thread.sleep() function
 	public static void elevatorDown(ArrayList <list> b) throws InterruptedException {
 		for (int i = 1; i < b.size(); i++) {
 			if (b.get(i).getBol() == false){
@@ -232,7 +241,7 @@ public class elevator  {
 	
 }
 
-	
+//list class which contains field values: int for floors and boolean for whether elevator stops or does not stop at a floor	
 class list {
 	
 	int a;
