@@ -7,23 +7,26 @@ public class elevator  {
 		 //list of all the floors in the building excluding 1; used temporarily for the upMain arraylist
 		 ArrayList <Integer> up = new ArrayList<Integer>();
 		 
-		 //list of the floors in which the elevator will stop while going up
+		 //list of the floors in which the elevator will stop
 		 ArrayList <Integer> upMain = new ArrayList<Integer>();
 		 
-		 //list of floors in which the elevator will stop and will not stop 
+		 //list of floors in which the elevator will stop and will not stop while going up
 		 ArrayList <list> comb = new ArrayList<list>();
 		 
 		 //list of all the floors in the building excluding 1; used temporarily for the downMain arraylist
 		 ArrayList <Integer> down = new ArrayList <Integer>();
 		 
-		 //list of the floors in which the elevator will stop while going down 
+		 //list of the floors in which the elevator will stop 
 		 ArrayList <Integer> downMain = new ArrayList <Integer>();
-		
+		 
+		 //list of floors in which the elevator will stop and will not stop while going down
 		 ArrayList <list> dow  = new ArrayList <list>();
 		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Would you like to go up? (yes/no) ");
-		String line = input.nextLine();
+		String line = input.nextLine
+			
+		//condition to end the do while loop
 		boolean doAgain = false;
 		if (line.equals("yes")) {
 
@@ -99,10 +102,11 @@ public class elevator  {
 		
 	
 
-					
+			//stops the thread for 2 seconds after the print statement		
 			System.out.println("Starting at floor 1");
 			Thread.sleep(2000);
 			elevatorUp(comb);
+			//stops the thread for 2 seconds when elevator goes from up to down
 			Thread.sleep(2000);
 			elevatorDown(dow);
 			System.out.println("Now back at floor 1");
@@ -129,18 +133,19 @@ public class elevator  {
 		}
 	}
 	
-	
-	public static void integrate( ArrayList <Integer> upMain, ArrayList<list> c) {
-		for(int i = 0; i < c.size(); i++ ) {
+	//stores the floors in which the elevator will stop from upMain list to comb list by changing boolean value
+	//true = elevator will stop ; false = elevator will not stop
+	public static void integrate( ArrayList <Integer> upMain, ArrayList<list> comb) {
+		for(int i = 0; i < comb.size(); i++ ) {
 		
-			if (upMain.contains(c.get(i).getInt())) {
-				c.get(i).change(true);
+			if (upMain.contains(comb.get(i).getInt())) {
+				comb.get(i).change(true);
 				
 				}	
 			}
 		}
 	
-	
+	//
 	public static void randomFloor(ArrayList <Integer> a, ArrayList <Integer> b, int c) {
 		for (int i = 0; i < 11 - c; i++ ) {
 			Collections.shuffle(a);
