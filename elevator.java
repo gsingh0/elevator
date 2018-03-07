@@ -4,12 +4,21 @@ import java.util.*;
 public class elevator  {
 	
 	public static void main (String [] args) throws InterruptedException {
+		 //list of all the floors in the building excluding 1; used temporarily for the upMain arraylist
 		 ArrayList <Integer> up = new ArrayList<Integer>();
+		 
+		 //list of the floors in which the elevator will stop while going up
 		 ArrayList <Integer> upMain = new ArrayList<Integer>();
+		 
+		 //list of floors in which the elevator will stop and will not stop 
 		 ArrayList <list> comb = new ArrayList<list>();
-		
+		 
+		 //list of all the floors in the building excluding 1; used temporarily for the downMain arraylist
 		 ArrayList <Integer> down = new ArrayList <Integer>();
+		 
+		 //list of the floors in which the elevator will stop while going down 
 		 ArrayList <Integer> downMain = new ArrayList <Integer>();
+		
 		 ArrayList <list> dow  = new ArrayList <list>();
 		
 		Scanner input = new Scanner(System.in);
